@@ -16,3 +16,16 @@ body {
     text-align: center;
 
 }
+
+.card {
+    background-color: blueviolet;
+    width: 300px;
+    height: 300px;
+    border-radius: 40px;
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+
+    
+
+}
