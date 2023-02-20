@@ -1,31 +1,41 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: rgb(223, 105, 198);
+    background-color: rgb(165, 105, 221);
     color: #fff;
     font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    font-size: larger;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
 }
 
 .genre-column {
-    display: flex;
+    display: inline-flex ;
     flex-direction: column;
     text-align: center;
+
 
 }
 
 .card {
-    background-color: blueviolet;
+    background-color:  rgba(245, 137, 221, 0.881);
     width: 300px;
     height: 300px;
     border-radius: 40px;
     text-align: center;
-    padding: 5px;
+    padding: 20px;
     margin: 10px;
+    font-weight: bolder;
 
     
 
 }
+
+#game {
+    display: flex;
+}
+

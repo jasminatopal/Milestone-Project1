@@ -40,14 +40,14 @@ levels.forEach(level => {
 
 
 //use fetch to generate the questions 
-    fetch(`https://opentdb.com/api.php?amount=20&category=${genre.id}&difficulty=${level}&type=multiple`)
+    fetch(`https://opentdb.com/api.php?amount=1&category=${genre.id}&difficulty=${level}&type=multiple`)
     .then(response => response.json())
     .then(data => {
         console.log(data)
         //
         card.setAttribute('data-question', data.results[0].question)
-        card.setAttribute('data-answer', data.results[0].correct_answer)
-        card.setAttribute('data-answer', data.results[0].incorrect_answers)
+        card.setAttribute('data-correct_answer', data.results[0].correct_answer)
+        card.setAttribute('data-incorrect_answers', data.results[0].incorrect_answers[0])
         card.setAttribute('data-value', card.getInnerHTML())
     })
         card.addEventListener('click', flipCard)
@@ -71,15 +71,27 @@ if (levels === 'hard'){
 
 
 }
-
+//for each loop to add the different genres
 genres.forEach(genre => addGenre(genre))
 
 function flipCard() {
     console.log('clicked')
     const textDisplay = document.createElement("div")
     textDisplay.innerHTML = this.getAttribute('data-question')
- 
+    this.append(textDisplay)
+
+    const allCards = Array.from(document.querySelectorAll('.card'))
+    allCards.forEach(card => card.removeEventListener('click', flipCard))
 }
 
-const correctButton = document.createElement('button')
-const incorrectButton = document.createElement('button')
+// **unable to get buttons to show in the card - review below code
+// const correctButton = document.createElement("button")
+// const incorrectButton1 = document.createElement("button")
+// const incorrectButton2 = document.createElement("button")
+// const incorrectButton3 = document.createElement("button")
+// correctButton.innerHTML = data.result[0].correct_answer
+// incorrectButton1.innerHTML = data.results[0].incorrect_answers[0]
+// incorrectButton2.innerHTML = data.results[0].incorrect_answers[1]
+// incorrectButton3.innerHTML = data.results[0].incorrect_answers[2]
+
+
