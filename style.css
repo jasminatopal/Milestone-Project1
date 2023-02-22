@@ -39,3 +39,10 @@ body {
     display: flex;
 }
 
+.correct-answer {
+    background-color: rgba(72, 239, 225, 0.76);
+}
+
+.incorrect-answer {
+    background-color: rgba(239, 47, 50, 0.76);
+}
