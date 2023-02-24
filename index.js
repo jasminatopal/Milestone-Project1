@@ -6,6 +6,7 @@ const genres = [
     {
     name: 'General',
     id: 9
+
 },
 
     {
@@ -28,6 +29,7 @@ const levels = ['easy', 'medium', 'hard']
 
 //create div using js 
 function addGenre(genre) {
+
     const column = document.createElement("div")
     column.classList.add('genre-column')
     column.innerHTML =  genre.name
@@ -66,7 +68,7 @@ fetch(`https://opentdb.com/api.php?amount=1&category=${genre.id}&difficulty=${le
     card.setAttribute('data-incorrectanswer3', data.results[0].incorrect_answers[2])
     card.setAttribute('data-value', card.getInnerHTML())
 })
-     card.addEventListener('click', flipCard)
+     .then(done => card.addEventListener('click', flipCard))
 })
 
 }
@@ -75,9 +77,10 @@ fetch(`https://opentdb.com/api.php?amount=1&category=${genre.id}&difficulty=${le
 //for each loop to add the different genres
 genres.forEach(genre => addGenre(genre))
 
-
+//create context of card including buttons and data from api
 function flipCard() {
     this.innerHTML = ''
+    this.style.fontSize = '20px'
     const textDisplay = document.createElement("div")
     const correctButton = document.createElement("button")
     const incorrectButton1 = document.createElement("button")
@@ -97,10 +100,9 @@ function flipCard() {
 
     this.append(textDisplay, correctButton, incorrectButton1, incorrectButton2, incorrectButton3)
 
-    
     const allCards = Array.from(document.querySelectorAll('.card'))
     allCards.forEach(card => card.removeEventListener('click', flipCard))
-    
+
 }
 
 
@@ -110,28 +112,28 @@ function getResult() {
     const allCards = Array.from(document.querySelectorAll('.card'))
     allCards.forEach(card => card.addEventListener('click', flipCard))
 
-
-    const cardOfButton = this.parentElement
-    if (cardOfButton.getAttribute('data-answer') === this.innerHTML) {
-        score = score + parseInt(cardOfButton.getAttribute('data-value'))
+    const buttonOnCard = this.parentElement
+    if (buttonOnCard.getAttribute('data-answer') === this.innerHTML) {
+        score = score + parseInt(buttonOnCard.getAttribute('data-value'))
         scoreDisplay.innerHTML = score
-        cardOfButton.classList.add('correct-answer')
+        buttonOnCard.classList.add('correct-answer')
         setTimeout(() => {
-            while (cardOfButton.firstChild) {
-                cardOfButton.removeChild(cardOfButton.lastChild)
+            while (buttonOnCard.firstChild) {
+                buttonOnCard.removeChild(buttonOnCard.lastChild)
             }
-            cardOfButton.innerHTML = cardOfButton.getAttribute('data-value')
-        }, 100)
-    } else {
-        cardOfButton.classList.add('incorrect-answer')
-        setTimeout(() => {
-            while (cardOfButton.firstChild) {
-                cardOfButton.removeChild(cardOfButton.lastChild)
-            }
-            cardOfButton.innerHTML = 0
+            buttonOnCard.innerHTML = buttonOnCard.getAttribute('data-value')
         }, 100)
 
-cardOfButton.removeEventListener('click', flipCard)
-
+    } else {(buttonOnCard.classList.add('incorrect-answer'))
+        setTimeout(() => {
+            while (buttonOnCard.firstChild) {
+                buttonOnCard.removeChild(buttonOnCard.lastChild)
+            }
+            buttonOnCard.innerHTML = 0
+        }, 100)
     }
+
+        buttonOnCard.removeEventListener('click', flipCard)
+
+    
 }
