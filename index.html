@@ -8,15 +8,20 @@
     <!--if script tag is in the head, the JavaScript is loaded before  HTML, therefore the element I'm trying to access does not exist in the DOM yet. Remember to add defer to the script--> 
     <script src="index.js" defer></script>
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arima:wght@100;400&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <h1>Welcome to <em>I should have known that</em>!</h1>
+    <h1>Welcome to <em>I should have known that!</em></h1>
     <h2>Test your trivia knowledge by answering the questions below</h2>
+    <p>Score:<span id="score"> 0 </span></p>
 
     <div id="game"></div>
-
-    <p>Score:<span id="score"> 0 </span></p>
+    <button id="reset-button">Reset</button>
 
 </body>
 </html>
+
+
