@@ -124,6 +124,8 @@ function getResult() {
         scoreDisplay.innerHTML = score; 
         buttonOnCard.classList.add('correct-answer') //<-- create classList to be able to change the color of the card in css
          buttonOnCard.removeEventListener('click', flipCard)
+
+        //set time out to prevent other answer options to be clicked once and answer has be submitted
         setTimeout(() => {
             while (buttonOnCard.firstChild) {
                 buttonOnCard.removeChild(buttonOnCard.lastChild)
@@ -144,7 +146,8 @@ function getResult() {
 
         }, 100)
 
-    
+        
+
     }
     
         buttonOnCard.removeEventListener('click', flipCard)
@@ -152,13 +155,5 @@ function getResult() {
     
 }
 
-//button to reset game
-const resetButton = document.getElementById("reset-button");
-resetButton.addEventListener('click', () => {
-  console.log('reset button clicked');
-});
-
-//unable to get button to work to reset the game - need to work on writing function 
-
-//also need to work on disabling ability to re-click a played card
+// need to work on disabling ability to re-click a played card
 

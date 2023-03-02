@@ -51,7 +51,7 @@ button {
 }
 
 button:hover {
-    box-shadow: 0 12px 16px 0 rgba(19, 18, 19, 0.24), 0 17px 50px 0 rgba(29, 28, 28, 0.19);
+    box-shadow: 0 10px 10px 0 rgba(32, 18, 32, 0.466), 0 17px 50px 0 rgba(32, 18, 32, 0.466);
 
 }
 
@@ -103,7 +103,7 @@ p {
 
 }
 
-#reset-button {
+.reset-button {
     border-style:double;
     padding: 10px;
     background-color: rgb(233, 236, 239);
@@ -114,6 +114,8 @@ p {
     font-family: 'Arima';
     font-size: larger;
     font-weight: bolder;
+    color: rgb(76, 76, 77);
+    margin-bottom: 25px;
 
 }
 

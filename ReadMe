@@ -1,2 +1,6 @@
 Use ReadMe to:
 Describe the inspiration for the game, explain the controls and how to play the game, list the technologies used to build the game, and address any outstanding bugs or unfinished functionality
+
+'I should have known that' was inspired in part by Jeopardy. The trivia game is played simply by click on a card in any of the genre columns. If the player answers the question correctly, they score the points on the card. If the player answers the question incorrectly, they do not score any points. The score is tracked above the cards. The game is over once all of the cards have been played. 
+
+
