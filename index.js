@@ -68,7 +68,7 @@ fetch(`https://opentdb.com/api.php?amount=1&category=${genre.id}&difficulty=${le
     card.setAttribute('data-incorrectanswer1', data.results[0].incorrect_answers[0])
     card.setAttribute('data-incorrectanswer2', data.results[0].incorrect_answers[1])
     card.setAttribute('data-incorrectanswer3', data.results[0].incorrect_answers[2])
-    card.setAttribute('data-value', card.getInnerHTML())
+    card.setAttribute('data-value', card.innerHTML)
 })
      .then(done => card.addEventListener('click', flipCard))
 })
