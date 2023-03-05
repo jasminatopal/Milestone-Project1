@@ -1,6 +1,8 @@
-Use ReadMe to:
-Describe the inspiration for the game, explain the controls and how to play the game, list the technologies used to build the game, and address any outstanding bugs or unfinished functionality
+'I should have known that' was inspired in part by Jeopardy. The trivia game is played simply by clicking on a card in any of the genre columns. If the player answers the question correctly, they score the points on the card and the card turns green. If the player answers the question incorrectly, they do not score any points and the card turns red. The score is tracked above the cards. The game is over once all of the cards have been played. The player can reset the game by clicking the reset button at the bottom of the page.
 
-'I should have known that' was inspired in part by Jeopardy. The trivia game is played simply by click on a card in any of the genre columns. If the player answers the question correctly, they score the points on the card. If the player answers the question incorrectly, they do not score any points. The score is tracked above the cards. The game is over once all of the cards have been played. 
+While the game is functional, it does have outstanding bugs such as a played card not disabling after it's been played. The color of the card changes to red or green depending on the answer selection, however, the player can re-click the card after playing another card to obtain the question again. Additionally, the questions and answers pull from the API successfully, however, the answers are not randomized and the correct answer is always the first answer. Also, depending on the question length, sometimes the answer options display outside of the card's length. The 'Reset' button also displays differently depending on the user's choice of browser.
+
+To enhance the game furthermore, sounds can be generated to announce correct and incorrect answers and the end of the game. The game can also include multiple levels in which more genres and questions generate all while tracking the player's best score.
+
 
 

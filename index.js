@@ -105,14 +105,12 @@ function flipCard() {
     //disable event listener to prevent from clicking on multipe questions at once
     const allCards = Array.from(document.querySelectorAll('.card'))
     allCards.forEach(card => card.removeEventListener('click', flipCard))
-
 }
 
 
 //funtion to get results when clicking a card 
 function getResult() {
 
-    
     const allCards = Array.from(document.querySelectorAll('.card'))
     allCards.forEach(card => card.addEventListener('click', flipCard))
 
@@ -130,11 +128,9 @@ function getResult() {
             while (buttonOnCard.firstChild) {
                 buttonOnCard.removeChild(buttonOnCard.lastChild)
             }
-            buttonOnCard.innerHTML = buttonOnCard.getAttribute('data-value') //<-- shows score received from this card
+            buttonOnCard.innerHTML = buttonOnCard.getAttribute('data-value') 
         }, 100)
 //if answer is incorrect below statement will run 
-
-
 
     } else {(buttonOnCard.classList.add('incorrect-answer'))
     
@@ -145,15 +141,9 @@ function getResult() {
             buttonOnCard.innerHTML = 0
 
         }, 100)
-
-        
-
     }
-    
         buttonOnCard.removeEventListener('click', flipCard)
-
-    
 }
 
-// need to work on disabling ability to re-click a played card
+
 
