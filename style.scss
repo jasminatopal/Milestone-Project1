@@ -1,0 +1,118 @@
+// Variables
+$primary-color: rgb(212, 136, 207);
+$secondary-color: rgb(76, 76, 77);
+$button-bg-color: rgb(233, 236, 239);
+
+// Mixins
+@mixin box-shadow($x, $y, $blur, $color) {
+  box-shadow: $x $y $blur $color;
+  -webkit-box-shadow: $x $y $blur $color;
+  -moz-box-shadow: $x $y $blur $color;
+}
+
+// Global styles
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $primary-color;
+  color: $secondary-color;
+  font-family: 'Arima';
+  font-weight: bolder;
+  font-size: larger;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  h1 {
+    margin-bottom: 0;
+    width: 90%;
+    border-style: outset;
+    padding: 12px;
+    background-color: $button-bg-color;
+    opacity: 0.8;
+    border-radius: 10px;
+    box-shadow: 5px 5px;
+    font-size: 50px;
+    text-align: center;
+  }
+
+  h2 {
+    text-shadow: 3px 3px 3px rgba(123, 115, 118, 0.516);
+    margin-bottom: 1px;
+  }
+
+  p {
+    border-style: solid;
+    border-width: 2px;
+    padding: 10px;
+    background-color: $button-bg-color;
+    border-radius: 15px;
+    text-align: center;
+    min-width: 7%;
+    font-family: 'Arima';
+    font-size: larger;
+    font-weight: bolder;
+  }
+}
+
+// Individual classes and IDs
+.genre-column {
+  display: inline-flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 35px;
+  margin-top: 5px;
+}
+
+.card {
+  background-color: rgba(249, 167, 231, 0.881);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 300px;
+  height: 170px;
+  border-radius: 27px;
+  padding: 20px;
+  margin: 10px;
+  font-size: 70px;
+  @include box-shadow(3px, 3px, 3px, rgb(233, 236, 239));
+}
+
+button {
+  margin: 7px;
+  padding: 5px;
+  background-color: $button-bg-color;
+  border-radius: 5px;
+
+  &:hover {
+    @include box-shadow(0, 10px, 10px, 0 rgba(32, 18, 32, 0.466), 0 17px 50px 0 rgba(32, 18, 32, 0.466));
+  }
+}
+
+#game {
+  display: flex;
+}
+
+.correct-answer {
+  background-color: rgba(119, 228, 166, 0.76);
+}
+
+.incorrect-answer {
+  background-color: rgba(242, 111, 113, 0.76);
+}
+
+.reset-button {
+  border-style: double;
+  padding: 10px;
+  background-color: $button-bg-color;
+  border-radius: 15px;
+  margin: 15px;
+  text-align: center;
+  min-width: 7%;
+  font-family: 'Arima';
+  font-size: larger;
+  font-weight: bolder;
+  color: $secondary-color;
+  margin-bottom: 25px;
+}
